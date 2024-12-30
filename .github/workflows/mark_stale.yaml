@@ -1,0 +1,23 @@
+name: Mark Stale Pull Requests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+env:
+  STALE_LABEL: stale
+
+
+jobs:
+  stale:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-stale: 0
+          stale-pr-label: 'stale'
+          labels-to-remove-when-unstale: 'stale'
+          days-before-close: -1
