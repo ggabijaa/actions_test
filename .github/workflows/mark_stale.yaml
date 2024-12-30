@@ -14,7 +14,7 @@ env:
 
 jobs:
   stale:
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted]
     steps:
       - uses: actions/stale@v9
         with:
